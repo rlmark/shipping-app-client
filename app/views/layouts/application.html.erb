@@ -3,19 +3,31 @@
 <head>
   <title>Toys</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <header>
-  <% if has_order? %>
-    <div class='nav-cart'>
-      Cart (<%= current_order.items.count %>)
+  <div class='container'>
+    <div class='col-xs-11 brand'>
+      <%= link_to root_path do %>
+        Buy Toys <small>from</small> Us
+      <% end %>
     </div>
-  <% end %>
+
+    <% if has_order? %>
+      <div class='col-xs-1 nav-cart'>
+        <%= link_to cart_path do %>
+          <span class='sr-only'>Cart (<%= current_order.items.count %>)</span><i class='icon icon-cart'></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </header>
-<div class='container'>
+
+<div role="main" class='container'>
 <%= yield %>
 </div>
 </body>

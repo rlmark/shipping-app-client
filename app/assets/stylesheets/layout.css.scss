@@ -1,0 +1,25 @@
+[role=main] {
+  margin: 20px auto;
+}
+
+header {
+  height: 50px;
+  background-color: #53c5ff;
+  border-bottom: 4px solid #338c9d;
+}
+
+.brand {
+  font-family: "Amatic SC";
+  font-size: 35px;
+}
+
+i.icon-cart {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: image-url("cart.png");
+}
+
+.nav-cart {
+  margin-top: 10px;
+}
