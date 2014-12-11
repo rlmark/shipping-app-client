@@ -1,4 +1,18 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :credit_card do
+    name "MyString"
+number "MyString"
+expiration "MyString"
+cvv "MyString"
+  end
+  factory :address do
+    order_id 1
+name "MyString"
+street "MyString"
+city "MyString"
+state "MyString"
+postal_code "MyString"
+  end
+
 
   factory :line_item do
     product_id 1

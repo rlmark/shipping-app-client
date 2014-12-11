@@ -3,62 +3,63 @@
   <%= form_for current_order do |f| %>
     <div class='col-lg-4'>
       <h4 class='brand'>Address</h4>
+      <%= f.fields_for :address do |address| %>
+        <div class='form-group'>
+          <%= address.label :street do %>
+            Street Address
+            <%= address.text_field :street, class: "form-control" %>
+          <% end %>
+        </div>
 
-      <div class='form-group'>
-        <%= f.label :number do %>
-          Street Address
-          <%= f.text_field :number, class: "form-control" %>
-        <% end %>
-      </div>
+        <div class='form-group'>
+          <%= address.label :number do %>
+            City
+            <%= address.text_field :city, class: "form-control" %>
+          <% end %>
+        </div>
 
-      <div class='form-group'>
-        <%= f.label :number do %>
-          City
-          <%= f.text_field :number, class: "form-control" %>
-        <% end %>
-      </div>
+        <div class='form-group'>
+          <%= address.label :number do %>
+            State
+            <%= address.text_field :state, class: "form-control" %>
+          <% end %>
+        </div>
 
-      <div class='form-group'>
-        <%= f.label :number do %>
-          State
-          <%= f.text_field :number, class: "form-control" %>
-        <% end %>
-      </div>
-
-      <div class='form-group'>
-        <%= f.label :number do %>
-          Zip
-          <%= f.text_field :number, class: "form-control" %>
-        <% end %>
-      </div>
-
+        <div class='form-group'>
+          <%= address.label :number do %>
+            Zip
+            <%= address.text_field :postal_code, class: "form-control" %>
+          <% end %>
+        </div>
+      <% end %>
 
     </div>
 
     <div class='col-lg-4'>
       <h4 class='brand'>Credit Card</h4>
-      <div class='form-group'>
-        <%= f.label :number do %>
-          Name
-          <%= f.text_field :number, class: "form-control" %>
-        <% end %>
-      </div>
+      <%= f.fields_for :credit_card do |cc| %>
+        <div class='form-group'>
+          <%= cc.label :name do %>
+            Name
+            <%= cc.text_field :name, class: "form-control" %>
+          <% end %>
+        </div>
 
-      <div class='form-group'>
-        <%= f.label :number do %>
-          Number
-          <%= f.text_field :number, class: "form-control" %>
-        <% end %>
-      </div>
+        <div class='form-group'>
+          <%= cc.label :number do %>
+            Number
+            <%= cc.text_field :number, class: "form-control" %>
+          <% end %>
+        </div>
 
-      <div class='form-group'>
-        <%= f.label :number do %>
-          Expiration
-          <%= f.text_field :number, class: "form-control" %>
-          <p class="help-block">(mm/yy)</p>
-        <% end %>
-      </div>
-
+        <div class='form-group'>
+          <%= cc.label :expiration do %>
+            Expiration
+            <%= cc.text_field :expiration, class: "form-control" %>
+            <p class="help-block">(mm/yy)</p>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class='col-lg-4'>
