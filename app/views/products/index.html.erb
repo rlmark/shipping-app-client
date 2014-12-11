@@ -1,4 +1,15 @@
-<% @products.each do |product| %>
-  <%= image_tag product.image.url(:thumb), class: "thumbnail" %>
-  <h2><%= link_to product.name, product_path(product) %></h2>
+<% @products.each_slice(4) do |products| %>
+  <div class='row'>
+    <% products.each do |product| %>
+      <div class='col-sm-3 product'>
+        <%= link_to product_path(product) do %>
+          <h4>
+            <%= product.name %>
+            <small><%= product.price.format %></small>
+          </h4>
+          <%= image_tag product.image.url(:thumb), class: "img img-responsive thumbnail" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 <% end %>

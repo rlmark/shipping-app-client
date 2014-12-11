@@ -1,6 +1,16 @@
-<h1>
-  <%= @product.name %>
-  <small><%= @product.price.format %></small>
-</h1>
-<%= image_tag @product.image.url %>
-<%= button_to "Add to Cart", cart_path(product_id: @product.id) %>
+<div class='row'>
+  <div class='col-md-9'>
+    <%= image_tag @product.image.url(:original), class: "img img-responsive" %>
+  </div>
+  <div class='col-md-3'>
+    <h1>
+      <%= @product.name %>
+      <small><%= @product.price.format %></small>
+    </h1>
+    <p>
+      <%= @product.description %>
+    </p>
+    <hr>
+    <%= button_to "Add to Cart", cart_path(product_id: @product.id), class: "btn btn-block btn-lg btn-success" %>
+  </div>
+</div>
