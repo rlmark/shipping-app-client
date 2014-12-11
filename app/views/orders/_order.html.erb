@@ -5,7 +5,7 @@
     <% order.items.each do |item| %>
       <tr>
         <td width="100"><%= image_tag item.product.image.url(:thumb) %></td>
-        <td width="99%" class='brand'><%= item.product.name %></td>
+        <td width="99%" class='brand'><%= link_to item.product.name, item.product %></td>
         <td><%= item.total.format %></td>
       </tr>
     <% end %>
