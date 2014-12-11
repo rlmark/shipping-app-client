@@ -1,0 +1,16 @@
+<h1>Order #<%= @order.number %></h1>
+
+<p>
+  <h3>Hey thanks for ordering from Buy Toys from Us!</h3>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<%= render @order %>
+
+<table class='table'>
+  <tbody>
+  <tr>
+    <td width="99%" colspan=2></td>
+    <td class='brand'>Total:<%= current_order.total.format %></td>
+  </tr>
+</tbody>
+</table>

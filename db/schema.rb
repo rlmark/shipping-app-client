@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141211230410) do
     t.string   "number"
     t.string   "expiration"
     t.string   "cvv"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

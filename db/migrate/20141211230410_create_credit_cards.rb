@@ -5,7 +5,8 @@ class CreateCreditCards < ActiveRecord::Migration
       t.string :number
       t.string :expiration
       t.string :cvv
-
+      t.integer :order_id
+      
       t.timestamps
     end
   end
