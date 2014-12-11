@@ -1,0 +1,28 @@
+<h1 class='brand'>Cart</h1>
+
+<table class='table cart'>
+  <thead>
+  </thead>
+  <tbody>
+    <% current_order.items.each do |item| %>
+      <tr>
+        <td width="100"><%= image_tag item.product.image.url(:thumb) %></td>
+        <td width="99%" class='brand'><%= item.product.name %></td>
+        <td><%= item.total.format %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render "orders/form" %>
+
+<table class='table'>
+  <tbody>
+  <tr>
+    <td width="99%" colspan=2></td>
+    <td class='brand'>Total:<%= current_order.total.format %></td>
+  </tr>
+</tbody>
+</table>
+
+<%= link_to "Checkout", "", class: "checkout btn btn-default btn-block" %>

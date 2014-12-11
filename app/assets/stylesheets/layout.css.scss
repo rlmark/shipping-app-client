@@ -23,3 +23,20 @@ i.icon-cart {
 .nav-cart {
   margin-top: 10px;
 }
+
+
+.cart tr td img {
+  width: 60px;
+}
+.cart tr td {
+  vertical-align: bottom;
+}
+
+
+.new-order {
+  display: none;
+}
+
+.shipping-options {
+  height: 230px;
+}

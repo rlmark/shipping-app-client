@@ -1,0 +1,73 @@
+<div class='row new-order'>
+  <hr>
+  <%= form_for current_order do |f| %>
+    <div class='col-lg-4'>
+      <h4 class='brand'>Address</h4>
+
+      <div class='form-group'>
+        <%= f.label :number do %>
+          Street Address
+          <%= f.text_field :number, class: "form-control" %>
+        <% end %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :number do %>
+          City
+          <%= f.text_field :number, class: "form-control" %>
+        <% end %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :number do %>
+          State
+          <%= f.text_field :number, class: "form-control" %>
+        <% end %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :number do %>
+          Zip
+          <%= f.text_field :number, class: "form-control" %>
+        <% end %>
+      </div>
+
+
+    </div>
+
+    <div class='col-lg-4'>
+      <h4 class='brand'>Credit Card</h4>
+      <div class='form-group'>
+        <%= f.label :number do %>
+          Name
+          <%= f.text_field :number, class: "form-control" %>
+        <% end %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :number do %>
+          Number
+          <%= f.text_field :number, class: "form-control" %>
+        <% end %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :number do %>
+          Expiration
+          <%= f.text_field :number, class: "form-control" %>
+          <p class="help-block">(mm/yy)</p>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class='col-lg-4'>
+      <h4 class='brand'>Shipping Option</h4>
+      <div class='shipping-options well'>
+        <span class='brand'>:( Please implement me</span>
+      </div>
+      <%= f.submit "Checkout", class: "btn btn-success btn-block" %>
+    </div>
+
+  <% end %>
+</div>
