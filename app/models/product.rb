@@ -4,6 +4,8 @@ class Product < ActiveRecord::Base
   before_create :set_canonical_name
   monetize :price_cents
 
+  mount_uploader :image, ProductImageUploader
+
   def to_param
     self.canonical_name
   end

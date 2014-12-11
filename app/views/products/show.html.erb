@@ -2,5 +2,5 @@
   <%= @product.name %>
   <small><%= @product.price.format %></small>
 </h1>
-
+<%= image_tag @product.image.url %>
 <%= button_to "Add to Cart", cart_path(product_id: @product.id) %>

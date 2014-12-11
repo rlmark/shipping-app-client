@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.1.2"
 
+gem "dotenv-rails"
 gem 'rails', '4.1.8'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -10,6 +11,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem "money-rails"
+gem 'carrierwave'
+gem "fog"
+gem "mini_magick"
 gem 'puma'
 
 group :development, :test do
