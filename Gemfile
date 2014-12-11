@@ -15,6 +15,7 @@ gem 'carrierwave'
 gem "fog"
 gem "mini_magick"
 gem 'puma'
+gem "rails_12factor", group: :production
 
 group :development, :test do
   gem "rspec-rails"
