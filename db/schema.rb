@@ -31,13 +31,18 @@ ActiveRecord::Schema.define(version: 20141211175958) do
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["number"], name: "index_orders_on_number", using: :btree
+
   create_table "products", force: true do |t|
     t.string   "name"
+    t.string   "canonical_name"
     t.text     "description"
-    t.decimal  "weight",      precision: 15, scale: 2
+    t.decimal  "weight",         precision: 15, scale: 2
     t.integer  "price_cents"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "products", ["canonical_name"], name: "index_products_on_canonical_name", using: :btree
 
 end

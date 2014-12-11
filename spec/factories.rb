@@ -10,7 +10,7 @@ FactoryGirl.define do
   end
 
   factory :product do
-    name "Troll"
+    name "Troll Doll"
     description "MyText"
     weight 1.5
     price_cents 100

@@ -10,8 +10,10 @@ RSpec.describe ProductsController, :type => :controller do
   end
 
   describe "GET show" do
+    let!(:product) { create(:product) }
+    
     it "returns http success" do
-      get :show
+      get :show, canonical_name: "troll-doll"
       expect(response).to have_http_status(:success)
     end
   end

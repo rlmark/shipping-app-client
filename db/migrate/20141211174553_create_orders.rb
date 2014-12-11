@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :number
 
       t.timestamps
+      t.index :number
     end
   end
 end

@@ -46,4 +46,10 @@ RSpec.describe Product, :type => :model do
       expect(product.price.format).to eq "$1.00"
     end
   end
+
+  describe '#canonical_name' do
+    it 'is set on creation' do
+      expect(product.canonical_name).to eq "troll-doll"
+    end
+  end
 end
