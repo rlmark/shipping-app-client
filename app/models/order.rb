@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  has_many :items, class_name: "LineItem"
+
   validates :number, uniqueness: true
   before_create :set_number
 
@@ -11,6 +13,6 @@ class Order < ActiveRecord::Base
   end
 
   def create_number
-    (SecureRandom.random_number(9000000) + 1000000)
+    (SecureRandom.random_number(9000000) + 1000000).to_s
   end
 end

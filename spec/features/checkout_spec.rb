@@ -11,6 +11,6 @@ describe "the checkout process", :type => :feature do
     expect(page).to have_content "Troll Doll"
     expect(page).to have_content "$1.00"
     click_button "Add to Cart"
-    expect(page).to_have content "Cart (1)"
+    expect(page).to have_content "Cart (1)"
   end
 end

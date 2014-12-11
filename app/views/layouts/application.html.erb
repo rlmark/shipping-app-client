@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<header>
+  <% if has_order? %>
+    <div class='nav-cart'>
+      Cart (<%= current_order.items.count %>)
+    </div>
+  <% end %>
+</header>
+
 <%= yield %>
 
 </body>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/products",                 to: "products#index", as: :products
   get "/products/:canonical_name", to: "products#show",  as: :product
 
+  get  "/cart",    to: "cart#show",     as: :cart
+  post "/cart",    to: "cart#create"
   root "products#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

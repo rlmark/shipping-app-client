@@ -4,9 +4,14 @@ class LineItem < ActiveRecord::Base
   validates :product_id, :order_id, :quantity, presence: true
   monetize :total_cents
 
-  before_save :update_total, if: :product
+  before_validation :update_total
 
   def update_total
+    return unless product.present?
     self.total_cents = self.product.price_cents * self.quantity
+  end
+
+  def has_product?
+    product_id || product
   end
 end
