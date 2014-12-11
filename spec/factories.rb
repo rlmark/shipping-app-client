@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :order do
+  end
+
   factory :product do
     name "Troll"
     description "MyText"
