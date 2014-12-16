@@ -1,41 +1,11 @@
 <div class='row new-order'>
   <hr>
+  <div class="col-lg-2">
+    <h4 class='brand'>Address</h4>
+    <%= render current_order.address %>
+  </div>
   <%= form_for current_order do |f| %>
-    <div class='col-lg-4'>
-      <h4 class='brand'>Address</h4>
-      <%= f.fields_for :address do |address| %>
-        <div class='form-group'>
-          <%= address.label :street do %>
-            Street Address
-            <%= address.text_field :street, class: "form-control" %>
-          <% end %>
-        </div>
-
-        <div class='form-group'>
-          <%= address.label :number do %>
-            City
-            <%= address.text_field :city, class: "form-control" %>
-          <% end %>
-        </div>
-
-        <div class='form-group'>
-          <%= address.label :number do %>
-            State
-            <%= address.text_field :state, class: "form-control" %>
-          <% end %>
-        </div>
-
-        <div class='form-group'>
-          <%= address.label :number do %>
-            Zip
-            <%= address.text_field :postal_code, class: "form-control" %>
-          <% end %>
-        </div>
-      <% end %>
-
-    </div>
-
-    <div class='col-lg-4'>
+    <div class='col-lg-5'>
       <h4 class='brand'>Credit Card</h4>
       <%= f.fields_for :credit_card do |cc| %>
         <div class='form-group'>
@@ -62,7 +32,7 @@
       <% end %>
     </div>
 
-    <div class='col-lg-4'>
+    <div class='col-lg-5'>
       <h4 class='brand'>Shipping Option</h4>
       <div class='shipping-options well'>
         <span class='brand'>:( Please implement me</span>

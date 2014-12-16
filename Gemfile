@@ -16,6 +16,7 @@ gem "fog"
 gem "mini_magick"
 gem 'puma'
 gem "rails_12factor", group: :production
+gem "httparty"
 
 group :development, :test do
   gem "rspec-rails"
