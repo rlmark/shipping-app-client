@@ -7,8 +7,5 @@ class CartController < ApplicationController
   end
 
   def show
-    if current_order.shipping?
-      @shipping = HTTParty.get("http://localhost:3001/rates")
-    end
   end
 end
