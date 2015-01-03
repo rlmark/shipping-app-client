@@ -1,0 +1,35 @@
+
+  <h5>Fedex Quotes</h5>
+    <% @fedexresponse.each do |quote| %>
+      <div class="radio">
+        <label>
+          <input type="radio" name="test" value="<%= quote[1] %>">
+          <%= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
+        </label>
+      </div>
+    <% end %>
+
+
+  <h5>UPS Quotes</h5>
+    <% @upsresponse.each do |quote| %>
+      <div class="radio">
+        <label>
+          <input type="radio" name="test" value="<%= quote[1] %>">
+          <%= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
+        </label>
+      </div>
+    <% end %>
+
+  <h5>USPS Quotes</h5>
+  <% @uspsresponse.each do |quote| %>
+    <div class="radio">
+      <label>
+        <input type="radio" name="test" value="<%= quote[1] %>">
+        <%= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
+      </label>
+    </div>
+  <% end %>
+
+  <h3>Test total</h3>
+  <!-- Have total update button which updates total amount sending this value to controller -->
+  <%#= raise current_order.total.inspect %>

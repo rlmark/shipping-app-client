@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
   def show
+    # This displays on the confirmation page.
     @order = Order.find_by(number: params[:number])
   end
 

@@ -35,16 +35,17 @@
     <div class='col-lg-5'>
       <h4 class='brand'>Shipping Option</h4>
       <div class='shipping-options well'>
-        <!-- Shipping goes here, it'll prob be a form eventually -->
-        <span class='brand'>:( Please implement me</span>
-        <ul>
-          <% @response.each do |quote| %>
-            <li><%= quote[0] %>, <%= quote[1] %></li>
-          <% end %>
-        </ul>
+        <!-- Shipping goes here, it'll prob be a form eventually. -->
+        <%= render "orders/shipping" %>
       </div>
       <%= f.submit "Checkout", class: "btn btn-success btn-block" %>
     </div>
 
   <% end %>
 </div>
+
+<style media="screen">
+  .shipping-options {
+    overflow: scroll;
+  }
+</style>
