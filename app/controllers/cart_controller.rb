@@ -14,7 +14,7 @@ class CartController < ApplicationController
       make_address
 
       products = current_order.items.collect{|i| i.product }
-      @weight = products.sum {|p| p.weight}
+      @weight = products.sum {|p| p.weight} #returns BigDecimal type
 
       @fedexresponse = httparty_get_request("fedex", @state, @city, @postal_code, @weight)
       @upsresponse = httparty_get_request("ups", @state, @city, @postal_code, @weight)

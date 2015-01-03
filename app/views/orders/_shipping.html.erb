@@ -1,4 +1,4 @@
-
+<%= form_for current_order do |f| %>
   <h5>Fedex Quotes</h5>
     <% @fedexresponse.each do |quote| %>
       <div class="radio">
@@ -30,6 +30,10 @@
     </div>
   <% end %>
 
+  <% f.submit %>
+
+<% end %><!-- End of form-->
   <h3>Test total</h3>
   <!-- Have total update button which updates total amount sending this value to controller -->
-  <%#= raise current_order.total.inspect %>
+  <!-- Have this be the creation of a new item? Would necessitate new product too -->
+  <%= current_order.total.class %>
