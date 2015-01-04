@@ -1,12 +1,17 @@
-<%= form_for current_order do |f| %>
+<%= form_for current_order, url: update_order_path(current_order) do |f| %>
   <h5>Fedex Quotes</h5>
     <% @fedexresponse.each do |quote| %>
-      <div class="radio">
-        <label>
-          <input type="radio" name="test" value="<%= quote[1] %>">
-          <%= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
-        </label>
+      <%#= f.label quote[0]%>
+      <div class="form-field">
+        <%= f.radio_button :shipping_option, quote[0] + "," + quote[1].to_s %> <%= number_to_currency((quote[1].to_f)/100) %> <%= quote[0] %> 
       </div>
+
+      <!-- <div class="radio">
+        <label>
+          <input type="radio" name="test" value="<#%= quote[1] %>">
+          <%#= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
+        </label>
+      </div> -->
     <% end %>
 
 
@@ -30,10 +35,7 @@
     </div>
   <% end %>
 
-  <% f.submit %>
+  <%= f.submit "Update Total", class: "btn btn-submit" %>
 
 <% end %><!-- End of form-->
-  <h3>Test total</h3>
   <!-- Have total update button which updates total amount sending this value to controller -->
-  <!-- Have this be the creation of a new item? Would necessitate new product too -->
-  <%= current_order.total.class %>

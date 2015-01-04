@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   post "/cart",    to: "cart#create"
 
   get  "/orders/:number",  to: "orders#show", as: :order
-  patch "/orders/:number", to: "orders#update"
+  patch "/orders/:number", to: "orders#update", as: :update_order
 
   post "/addresses", to: "addresses#create", as: :addresses
-  
+
   root "products#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
