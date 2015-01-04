@@ -1,41 +1,11 @@
 <%= form_for current_order, url: update_order_path(current_order) do |f| %>
-  <h5>Fedex Quotes</h5>
-    <% @fedexresponse.each do |quote| %>
-      <%#= f.label quote[0]%>
+  <h5>Shipping Quotes</h5>
+    <% @allresponses.each do |quote| %>
       <div class="form-field">
-        <%= f.radio_button :shipping_option, quote[0] + "," + quote[1].to_s %> <%= number_to_currency((quote[1].to_f)/100) %> <%= quote[0] %> 
-      </div>
-
-      <!-- <div class="radio">
-        <label>
-          <input type="radio" name="test" value="<#%= quote[1] %>">
-          <%#= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
-        </label>
-      </div> -->
-    <% end %>
-
-
-  <h5>UPS Quotes</h5>
-    <% @upsresponse.each do |quote| %>
-      <div class="radio">
-        <label>
-          <input type="radio" name="test" value="<%= quote[1] %>">
-          <%= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
-        </label>
+        <%= f.radio_button :shipping_option, quote[0] + "," + quote[1].to_s %> <%= number_to_currency((quote[1].to_f)/100) %> <%= quote[0] %>
       </div>
     <% end %>
-
-  <h5>USPS Quotes</h5>
-  <% @uspsresponse.each do |quote| %>
-    <div class="radio">
-      <label>
-        <input type="radio" name="test" value="<%= quote[1] %>">
-        <%= number_to_currency((quote[1].to_f)/100) %>, <%= quote[0] %>
-      </label>
-    </div>
-  <% end %>
 
   <%= f.submit "Update Total", class: "btn btn-submit" %>
 
 <% end %><!-- End of form-->
-  <!-- Have total update button which updates total amount sending this value to controller -->

@@ -19,6 +19,9 @@ class CartController < ApplicationController
       @fedexresponse = httparty_get_request("fedex", @state, @city, @postal_code, @weight)
       @upsresponse = httparty_get_request("ups", @state, @city, @postal_code, @weight)
       @uspsresponse =httparty_get_request("usps", @state, @city, @postal_code, @weight)
+
+      # Combining quotes for form
+      @allresponses = @fedexresponse + @upsresponse + @uspsresponse
     end
   end
 
